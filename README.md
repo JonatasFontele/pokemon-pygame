@@ -1,2 +1,2 @@
 # pokemon-pygame
-Make a simple pokémon game with pygame just for testing
+Making a simple pokémon game with pygame just for testing
