@@ -9,19 +9,23 @@ class Pokemon(pygame.sprite.Sprite):
         self.image = pygame.transform.scale(self.image, [100, 100])
         self.rect = pygame.Rect(50, 50, 100, 100)
 
-        #self.speed = 0
-        #self.acceleration = 0.1
+        self.speed = 0
+        self.acceleration = 0.1
 
     def update(self, *args):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
             self.rect.move_ip(-5, 0)
-        if keys[pygame.K_RIGHT]:
+        elif keys[pygame.K_RIGHT]:
             self.rect.move_ip(5, 0)
-        if keys[pygame.K_UP]:
-            self.rect.move_ip(0, -5)
-        if keys[pygame.K_DOWN]:
-            self.rect.move_ip(0, 5)
+        elif keys[pygame.K_UP]:
+            self.speed -= self.acceleration
+        elif keys[pygame.K_DOWN]:
+            self.speed += self.acceleration
+        else:
+            self.speed *= 0.9
+
+        self.rect.y += self.speed
 
         if self.rect.top < 0:
             self.rect.top = 0
