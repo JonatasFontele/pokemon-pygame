@@ -29,8 +29,10 @@ class Pokemon(pygame.sprite.Sprite):
 
         if self.rect.top < 0:
             self.rect.top = 0
+            self.speed = 0
         if self.rect.bottom > 480:
             self.rect.bottom = 480
+            self.speed = 0
         if self.rect.left < 0:
             self.rect.left = 0
         if self.rect.right > 840:

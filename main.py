@@ -5,6 +5,8 @@ from pokemon import Pokemon
 pygame.init()
 display = pygame.display.set_mode([840, 480])
 pygame.display.set_caption("Pokéball Invaders")
+gameIcon = pygame.image.load('data/Haunter.png')
+pygame.display.set_icon(gameIcon)
 
 #def draw():
     #display.fill([105, 61, 28])
