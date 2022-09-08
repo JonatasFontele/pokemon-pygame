@@ -3,6 +3,7 @@ import random
 import pygame
 from pokemon import Pokemon
 from pokeball import Pokeball
+from move_attack import MoveAttack
 
 # Initializing pygame and creating the window
 pygame.init()
@@ -19,6 +20,7 @@ pygame.display.set_icon(game_icon)
 # Objects
 object_group = pygame.sprite.Group()
 pokeball_group = pygame.sprite.Group()
+attack_group = pygame.sprite.Group()
 # haunter = pygame.sprite.Sprite(draw_group)
 
 # Background
@@ -42,6 +44,7 @@ cry = pygame.mixer.Sound("data/haunter.mp3")
 cry.set_volume(0.2)
 
 game_loop = True
+game_over = False
 timer = 0
 
 # For FPS
@@ -55,23 +58,28 @@ if __name__ == "__main__":
             if event.type == pygame.QUIT:
                 game_loop = False
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_SPACE:
+                if event.key == pygame.K_SPACE and not game_over:
                     cry.play()
+                    newAttack = MoveAttack(object_group, attack_group)
+                    newAttack.rect.center = haunter.rect.center
 
         # Update logic
-        object_group.update()
+        if not game_over:
+            object_group.update()
 
-        timer += 1
-        if timer > 30:
-            timer = 0
-            if random.random() < 0.3:
-                newPokeball = Pokeball(object_group, pokeball_group)
+            timer += 1
+            if timer > 30:
+                timer = 0
+                if random.random() < 0.3:
+                    newPokeball = Pokeball(object_group, pokeball_group)
 
-        collisions = pygame.sprite.spritecollide(haunter, pokeball_group, False)
+            collisions = pygame.sprite.spritecollide(haunter, pokeball_group, False, pygame.sprite.collide_mask)
 
-        if collisions:
-            print("YOU GOT CAUGHT!")
-            game_loop = False
+            if collisions:
+                print("YOU GOT CAUGHT!")
+                game_over = True
+
+            hits = pygame.sprite.groupcollide(attack_group, pokeball_group, True, True, pygame.sprite.collide_mask)
 
         # Draw
         display.fill([105, 61, 28])
