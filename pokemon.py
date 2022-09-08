@@ -10,7 +10,7 @@ class Pokemon(pygame.sprite.Sprite):
         self.rect = pygame.Rect(50, 50, 100, 100)
 
         self.speed = 0
-        self.acceleration = 0.1
+        self.acceleration = 0.3
 
     def update(self, *args):
         keys = pygame.key.get_pressed()
@@ -23,7 +23,7 @@ class Pokemon(pygame.sprite.Sprite):
         elif keys[pygame.K_DOWN]:
             self.speed += self.acceleration
         else:
-            self.speed *= 0.9
+            self.speed *= 0.99
 
         self.rect.y += self.speed
 
