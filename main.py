@@ -45,15 +45,16 @@ cry = pygame.mixer.Sound("data/haunter.mp3")
 cry.set_volume(0.1)
 
 
-def get_image(sheet, width, height, scale, colour):
+def get_image(sheet, frame, width, height, scale, colour):
     image = pygame.Surface((width, height)).convert_alpha()
-    image.blit(sheet, (0, 0), (0, 0, width, height))
+    image.blit(sheet, (0, 0), ((frame * width), 0, width, height))
     image = pygame.transform.scale(image, (width * scale, height * scale))
     image.set_colorkey(colour)
     return image
 
 
-frame_0 = get_image(sprite_sheet_image, 64, 44, 2, (199, 225, 209, 255))
+frame_0 = get_image(sprite_sheet_image, 0, 64, 44, 2, (199, 225, 209, 255))
+frame_1 = get_image(sprite_sheet_image, 6, 64, 44, 2, (199, 225, 209, 255))
 
 game_loop = True
 game_over = False
@@ -97,5 +98,6 @@ if __name__ == "__main__":
         display.fill([105, 61, 28])
         object_group.draw(display)
         display.blit(frame_0, (0, 0))
+        display.blit(frame_1, (100, 0))
 
         pygame.display.update()
