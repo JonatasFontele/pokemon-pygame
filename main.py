@@ -1,6 +1,7 @@
 import random
 
 import pygame
+from sprite_sheet import SpriteSheet
 from pokemon import Pokemon
 from pokeball import Pokeball
 from move_attack import MoveAttack
@@ -31,6 +32,7 @@ background.rect = background.image.get_rect()
 
 haunter = Pokemon(object_group)
 sprite_sheet_image = pygame.image.load("data/Haunter_sprite_sheet.png").convert_alpha()
+sprite_sheet = SpriteSheet(sprite_sheet_image)
 
 pokeball = Pokeball(object_group)
 # pokeball.rect.center = [200, 400]
@@ -45,16 +47,10 @@ cry = pygame.mixer.Sound("data/haunter.mp3")
 cry.set_volume(0.1)
 
 
-def get_image(sheet, frame, width, height, scale, colour):
-    image = pygame.Surface((width, height)).convert_alpha()
-    image.blit(sheet, (0, 0), ((frame * width), 0, width, height))
-    image = pygame.transform.scale(image, (width * scale, height * scale))
-    image.set_colorkey(colour)
-    return image
-
-
-frame_0 = get_image(sprite_sheet_image, 0, 64, 44, 2, (199, 225, 209, 255))
-frame_1 = get_image(sprite_sheet_image, 6, 64, 44, 2, (199, 225, 209, 255))
+frame_0 = sprite_sheet.get_image(5.15, 0, 65, 45, 2, (199, 225, 209, 255))
+frame_1 = sprite_sheet.get_image(5.72, 0, 70, 50, 2, (199, 225, 209, 255))
+frame_2 = sprite_sheet.get_image(7.23, 0, 65, 45, 2, (199, 225, 209, 255))
+frame_3 = sprite_sheet.get_image(5.23, 1, 65, 50, 2, (199, 225, 209, 255))
 
 game_loop = True
 game_over = False
@@ -98,6 +94,8 @@ if __name__ == "__main__":
         display.fill([105, 61, 28])
         object_group.draw(display)
         display.blit(frame_0, (0, 0))
-        display.blit(frame_1, (100, 0))
+        display.blit(frame_1, (130, 0))
+        display.blit(frame_2, (270, 0))
+        display.blit(frame_3, (400, 0))
 
         pygame.display.update()
