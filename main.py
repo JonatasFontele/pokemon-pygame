@@ -46,11 +46,31 @@ pygame.mixer.music.play(-1)
 cry = pygame.mixer.Sound("data/haunter.mp3")
 cry.set_volume(0.1)
 
+# Animation list
+animation_list = []
+animation_steps = 4
+last_update = pygame.time.get_ticks()
+animation_cooldown = 190
+frame = 0
 
-frame_0 = sprite_sheet.get_image(5.15, 0, 65, 45, 2, (199, 225, 209, 255))
-frame_1 = sprite_sheet.get_image(5.72, 0, 70, 50, 2, (199, 225, 209, 255))
-frame_2 = sprite_sheet.get_image(7.23, 0, 65, 45, 2, (199, 225, 209, 255))
-frame_3 = sprite_sheet.get_image(5.23, 1, 65, 50, 2, (199, 225, 209, 255))
+# First row right
+animation_list.append(sprite_sheet.get_image(5.15, 0, 65, 45, 2, (199, 225, 209, 255)))
+animation_list.append(sprite_sheet.get_image(5.72, 0, 70, 50, 2, (199, 225, 209, 255)))
+animation_list.append(sprite_sheet.get_image(7.23, 0, 65, 45, 2, (199, 225, 209, 255)))
+
+# Second row right
+animation_list.append(sprite_sheet.get_image(5.23, 1, 65, 50, 2, (199, 225, 209, 255)))
+animation_list.append(sprite_sheet.get_image(6.23, 1, 65, 50, 2, (199, 225, 209, 255)))
+animation_list.append(sprite_sheet.get_image(7.23, 1, 65, 50, 2, (199, 225, 209, 255)))
+
+# Third row right
+animation_list.append(sprite_sheet.get_image(8.72, 2, 55, 50, 2, (199, 225, 209, 255)))
+
+# Fourth row right
+animation_list.append(sprite_sheet.get_image(4.53, 3, 65, 50, 2, (199, 225, 209, 255)))
+animation_list.append(sprite_sheet.get_image(6.08, 3, 60, 50, 2, (199, 225, 209, 255)))
+animation_list.append(sprite_sheet.get_image(7.08, 3, 60, 50, 2, (199, 225, 209, 255)))
+animation_list.append(sprite_sheet.get_image(8.72, 3, 55, 50, 2, (199, 225, 209, 255)))
 
 game_loop = True
 game_over = False
@@ -93,9 +113,16 @@ if __name__ == "__main__":
         # Draw
         display.fill([105, 61, 28])
         object_group.draw(display)
-        display.blit(frame_0, (0, 0))
-        display.blit(frame_1, (130, 0))
-        display.blit(frame_2, (270, 0))
-        display.blit(frame_3, (400, 0))
+
+        # Update animation
+        current_time = pygame.time.get_ticks()
+        if current_time - last_update >= animation_cooldown:
+            frame += 1
+            last_update = current_time
+            if frame >= len(animation_list):
+                frame = 0
+
+        # Frame image
+        display.blit(animation_list[frame], (100, 100))
 
         pygame.display.update()
