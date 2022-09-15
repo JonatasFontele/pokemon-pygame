@@ -1,14 +1,16 @@
 import random
 
 import pygame
-from sprite_sheet import SpriteSheet
-from pokemon import Pokemon
-from pokeball import Pokeball
-from move_attack import MoveAttack
+from model.sprite_sheet import SpriteSheet
+from model.pokemon import Pokemon
+from model.pokeball import Pokeball
+from model.move_attack import MoveAttack
 
 # Initializing pygame and creating the window
 pygame.init()
-display = pygame.display.set_mode([840, 480])
+WIDTH = 840
+HEIGHT = 480
+display = pygame.display.set_mode([WIDTH, HEIGHT])
 pygame.display.set_caption("Pokéball Invaders")
 game_icon = pygame.image.load('data/Haunter.png')
 pygame.display.set_icon(game_icon)
@@ -22,7 +24,6 @@ pygame.display.set_icon(game_icon)
 object_group = pygame.sprite.Group()
 pokeball_group = pygame.sprite.Group()
 attack_group = pygame.sprite.Group()
-# haunter = pygame.sprite.Sprite(draw_group)
 
 # Background
 background = pygame.sprite.Sprite(object_group)
@@ -39,7 +40,7 @@ pokeball = Pokeball(object_group)
 
 # Music
 pygame.mixer.music.load("data/lavender-town.mp3")
-pygame.mixer.music.set_volume(0.05)
+pygame.mixer.music.set_volume(0.01)
 pygame.mixer.music.play(-1)
 
 # Sounds
@@ -53,24 +54,46 @@ last_update = pygame.time.get_ticks()
 animation_cooldown = 190
 frame = 0
 
-# First row right
-animation_list.append(sprite_sheet.get_image(5.15, 0, 65, 45, 2, (199, 225, 209, 255)))
-animation_list.append(sprite_sheet.get_image(5.72, 0, 70, 50, 2, (199, 225, 209, 255)))
-animation_list.append(sprite_sheet.get_image(7.23, 0, 65, 45, 2, (199, 225, 209, 255)))
+LIGHT_BLUE = (199, 225, 209, 255)
 
-# Second row right
-animation_list.append(sprite_sheet.get_image(5.23, 1, 65, 50, 2, (199, 225, 209, 255)))
-animation_list.append(sprite_sheet.get_image(6.23, 1, 65, 50, 2, (199, 225, 209, 255)))
-animation_list.append(sprite_sheet.get_image(7.23, 1, 65, 50, 2, (199, 225, 209, 255)))
+# First row right — Idle
+animation_list.append(sprite_sheet.get_image(470, 0, 65, 45, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(402, 0, 68, 50, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(335, 0, 65, 45, 2, LIGHT_BLUE))
 
-# Third row right
-animation_list.append(sprite_sheet.get_image(8.72, 2, 55, 50, 2, (199, 225, 209, 255)))
+# Second row right — Forward
+animation_list.append(sprite_sheet.get_image(470, 50, 65, 50, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(405, 50, 65, 50, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(340, 50, 65, 50, 2, LIGHT_BLUE))
 
-# Fourth row right
-animation_list.append(sprite_sheet.get_image(4.53, 3, 65, 50, 2, (199, 225, 209, 255)))
-animation_list.append(sprite_sheet.get_image(6.08, 3, 60, 50, 2, (199, 225, 209, 255)))
-animation_list.append(sprite_sheet.get_image(7.08, 3, 60, 50, 2, (199, 225, 209, 255)))
-animation_list.append(sprite_sheet.get_image(8.72, 3, 55, 50, 2, (199, 225, 209, 255)))
+# Third row right — Damage
+animation_list.append(sprite_sheet.get_image(480, 100, 55, 50, 2, LIGHT_BLUE))
+
+# Fourth row right — Down
+animation_list.append(sprite_sheet.get_image(485, 142, 50, 57, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(425, 142, 60, 57, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(364, 142, 60, 57, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(295, 142, 65, 57, 2, LIGHT_BLUE))
+
+# Fifth row right — Punch
+animation_list.append(sprite_sheet.get_image(470, 203, 65, 42, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(417, 203, 55, 42, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(368, 203, 50, 42, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(308, 203, 60, 42, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(238, 203, 70, 42, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(153, 203, 85, 42, 2, LIGHT_BLUE))
+
+# Sixth row right — Lick
+animation_list.append(sprite_sheet.get_image(488, 248, 45, 62, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(425, 248, 60, 62, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(345, 248, 80, 62, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(265, 248, 80, 62, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(192, 248, 70, 62, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(125, 248, 65, 62, 2, LIGHT_BLUE))
+animation_list.append(sprite_sheet.get_image(60, 248, 65, 62, 2, LIGHT_BLUE))
+
+# First row right — Shiny
+# animation_list.append(sprite_sheet.get_image(0, 0, 65, 45, 2, LIGHT_BLUE))
 
 game_loop = True
 game_over = False
@@ -123,6 +146,6 @@ if __name__ == "__main__":
                 frame = 0
 
         # Frame image
-        display.blit(animation_list[frame], (100, 100))
+        display.blit(animation_list[frame], (200, 50))
 
         pygame.display.update()
