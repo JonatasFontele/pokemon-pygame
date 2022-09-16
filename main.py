@@ -8,17 +8,14 @@ from model.move_attack import MoveAttack
 
 # Initializing pygame and creating the window
 pygame.init()
-WIDTH = 840
-HEIGHT = 480
+WIDTH, HEIGHT = 840, 480
 display = pygame.display.set_mode([WIDTH, HEIGHT])
 pygame.display.set_caption("Pokéball Invaders")
 game_icon = pygame.image.load('data/Haunter.png')
 pygame.display.set_icon(game_icon)
-
-#def draw():
-    #display.fill([105, 61, 28])
-    # player = pygame.Rect(50, 50, 100, 100)
-    # pygame.draw.rect(display, [255, 255, 255, 255], player)
+game_loop = True
+game_over = False
+timer = 0
 
 # Objects
 object_group = pygame.sprite.Group()
@@ -45,10 +42,6 @@ pygame.mixer.music.play(-1)
 # Sounds
 cry = pygame.mixer.Sound("data/haunter.mp3")
 cry.set_volume(0.1)
-
-game_loop = True
-game_over = False
-timer = 0
 
 # For FPS
 clock = pygame.time.Clock()

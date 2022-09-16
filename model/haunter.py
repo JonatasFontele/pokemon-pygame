@@ -7,8 +7,7 @@ class Haunter(model.pokemon.Pokemon):
     def __init__(self):
         super().__init__()
 
-        self.image = pygame.image.load("data/Haunter_sprite_sheet.png").convert_alpha()
-        self.image = SpriteSheet(self.image)
+        self.image = SpriteSheet("data/Haunter_sprite_sheet.png")
         self.rect = pygame.Rect(50, 50, 100, 100)
 
         # Animation list
