@@ -22,5 +22,5 @@ class SpriteSheet:
     def parse_sprite(self, name):
         sprite = self.data['frames'][name]['frame']
         x, y, w, h = sprite["x"], sprite["y"], sprite["w"], sprite["h"]
-        image = self.get_sprite(x, y, w, h)
+        image = self.get_sprite(x, y, w, h, scale=2, colour=(199, 225, 209, 255))
         return image
