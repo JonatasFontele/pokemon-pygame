@@ -28,8 +28,8 @@ background.image = pygame.image.load("data/haunted_house.jpg")
 background.image = pygame.transform.scale(background.image, [840, 480])
 background.rect = background.image.get_rect()
 
-pokemon = Pokemon(object_group)
-haunter = Haunter()
+#pokemon = Pokemon(object_group)
+haunter = Haunter(object_group)
 # haunter.rect.center = [200, 400]
 
 pokeball = Pokeball(object_group)
@@ -57,7 +57,7 @@ if __name__ == "__main__":
                 if event.key == pygame.K_SPACE and not game_over:
                     cry.play()
                     newAttack = MoveAttack(object_group, attack_group)
-                    newAttack.rect.center = pokemon.rect.center
+                    newAttack.rect.center = haunter.rect.center
                     haunter.animate()
 
         # Update logic
@@ -69,12 +69,11 @@ if __name__ == "__main__":
                 if random.random() < 0.3:
                     newPokeball = Pokeball(object_group, pokeball_group)
 
-            collisions = pygame.sprite.spritecollide(pokemon, pokeball_group, False, pygame.sprite.collide_mask)
+            collisions = pygame.sprite.spritecollide(haunter, pokeball_group, False, pygame.sprite.collide_mask)
 
             if collisions:
                 print("YOU GOT CAUGHT!")
                 game_over = True
-
             hits = pygame.sprite.groupcollide(attack_group, pokeball_group, True, True, pygame.sprite.collide_mask)
 
         # Draw
@@ -82,6 +81,6 @@ if __name__ == "__main__":
 
         # Frame image
         haunter.update()
-        display.blit(haunter.animation_list[haunter.frame], (200, 50))
+        display.blit(haunter.animation_list[haunter.frame], (50, 50))
 
         pygame.display.update()
