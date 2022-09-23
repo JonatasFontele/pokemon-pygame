@@ -92,11 +92,11 @@ class Haunter(model.pokemon.Pokemon):
             self.rect.right = 840
 
         # Update animation
-        if self.animation:
-            current_time = pygame.time.get_ticks()
-            if current_time - self.last_update >= self.animation_cooldown:
-                self.frame += 1
-                self.last_update = current_time
-                if self.frame >= len(self.animation_list):
-                    self.frame = 0
-                    self.animation = False
+        # if self.animation:
+        #     current_time = pygame.time.get_ticks()
+        #     if current_time - self.last_update >= self.animation_cooldown:
+        #         self.frame += 1
+        #         self.last_update = current_time
+        #         if self.frame >= len(self.animation_list):
+        #             self.frame = 0
+        #             self.animation = False
