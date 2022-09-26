@@ -57,6 +57,9 @@ class Haunter(model.pokemon.Pokemon):
         self.image = self.animation_list[self.frame]
         self.rect = self.image.get_rect()
 
+        self.speed = 0
+        self.acceleration = 0.3
+
     def animate(self):
         self.animation = True
 
@@ -72,12 +75,16 @@ class Haunter(model.pokemon.Pokemon):
         keys = pygame.key.get_pressed()
         if keys[pygame.K_LEFT]:
             self.rect.move_ip(-5, 0)
-        if keys[pygame.K_RIGHT]:
+        elif keys[pygame.K_RIGHT]:
             self.rect.move_ip(5, 0)
-        if keys[pygame.K_UP]:
-            self.rect.move_ip(0, -5)
-        if keys[pygame.K_DOWN]:
-            self.rect.move_ip(0, 5)
+        elif keys[pygame.K_UP]:
+            self.speed -= self.acceleration
+        elif keys[pygame.K_DOWN]:
+            self.speed += self.acceleration
+        else:
+            self.speed *= 0.99
+
+        self.rect.y += self.speed
 
         # Boundaries
         if self.rect.top < 0:
