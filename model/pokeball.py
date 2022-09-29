@@ -8,7 +8,7 @@ class Pokeball(pygame.sprite.Sprite):
     def __init__(self, *groups):
         super().__init__(*groups)
 
-        self.image = pygame.image.load("data/Pokeball.png")
+        self.image = pygame.image.load("data/Pokeballs/Pokeball.png")
         self.image = pygame.transform.scale(self.image, [30, 30])
         self.rect = pygame.Rect(50, 50, 100, 100)
 

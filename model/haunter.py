@@ -7,7 +7,7 @@ class Haunter(model.pokemon.Pokemon):
     def __init__(self, *groups):
         super().__init__(*groups)
 
-        self.my_sprite_sheet = SpriteSheet("data/Haunter_sprite_sheet.png")
+        self.my_sprite_sheet = SpriteSheet("data/Ghost/Haunter_sprite_sheet.png")
         self.animation_list = []
 
         # First row right — Idle
@@ -49,14 +49,16 @@ class Haunter(model.pokemon.Pokemon):
         # First row right — Shiny
         # animation_list.append(sprite_sheet.get_image(0, 0, 65, 45, 2))
 
+        # Animation
         self.last_update = pygame.time.get_ticks()
         self.animation_cooldown = 400
         self.frame = 0
         self.animation = False
+        self.image = self.animation_list[self.frame - 1]
+        # self.rect = self.image.get_rect()
+        self.rect = pygame.Rect(50, 50, 100, 100)
 
-        self.image = self.animation_list[self.frame]
-        self.rect = self.image.get_rect()
-
+        # For inertia movement
         self.speed = 0
         self.acceleration = 0.3
 
@@ -66,6 +68,7 @@ class Haunter(model.pokemon.Pokemon):
     def update(self):
         current_time = pygame.time.get_ticks()
         if current_time - self.last_update >= self.animation_cooldown:
+            self.image = self.animation_list[self.frame]
             self.frame += 1
             self.last_update = current_time
             if self.frame >= len(self.animation_list):
@@ -97,13 +100,3 @@ class Haunter(model.pokemon.Pokemon):
             self.rect.left = 0
         if self.rect.right > 840:
             self.rect.right = 840
-
-        # Update animation
-        # if self.animation:
-        #     current_time = pygame.time.get_ticks()
-        #     if current_time - self.last_update >= self.animation_cooldown:
-        #         self.frame += 1
-        #         self.last_update = current_time
-        #         if self.frame >= len(self.animation_list):
-        #             self.frame = 0
-        #             self.animation = False

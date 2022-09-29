@@ -11,7 +11,7 @@ pygame.init()
 WIDTH, HEIGHT = 840, 480
 display = pygame.display.set_mode([WIDTH, HEIGHT])
 pygame.display.set_caption("Pokéball Invaders")
-game_icon = pygame.image.load('data/Haunter.png')
+game_icon = pygame.image.load('data/Pokeballs/Pokeball.png')
 pygame.display.set_icon(game_icon)
 game_loop = True
 game_over = False
@@ -40,7 +40,7 @@ pygame.mixer.music.set_volume(0.01)
 pygame.mixer.music.play(-1)
 
 # Sounds
-cry = pygame.mixer.Sound("data/haunter.mp3")
+cry = pygame.mixer.Sound("data/Ghost/haunter.mp3")
 cry.set_volume(0.1)
 
 # For FPS
@@ -58,7 +58,7 @@ if __name__ == "__main__":
                     cry.play()
                     newAttack = MoveAttack(object_group, attack_group)
                     newAttack.rect.center = haunter.rect.center
-                    haunter.animate()
+                    #haunter.animate()
 
         # Update logic
         if not game_over:
@@ -78,9 +78,4 @@ if __name__ == "__main__":
 
         # Draw
         object_group.draw(display)
-
-        # Frame image
-        haunter.update()
-        display.blit(haunter.animation_list[haunter.frame], (50, 50))
-
         pygame.display.update()

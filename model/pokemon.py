@@ -5,8 +5,8 @@ class Pokemon(pygame.sprite.Sprite):
     def __init__(self, *groups):
         super().__init__(*groups)
 
-        self.image = pygame.image.load("data/Haunter.png")
-        self.image = pygame.transform.scale(self.image, [100, 100])
+        self.image = pygame.image.load("data/Ghost.png")
+        self.image = pygame.transform.scale(self.image, [120, 120])
         self.rect = pygame.Rect(50, 50, 100, 100)
 
     def update(self, *args):
