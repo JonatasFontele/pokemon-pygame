@@ -4,8 +4,6 @@
     "frame": {"x":470,"y":0,"w":65,"h":45},
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-    "sourceSize": {"w":128,"h":128},
     "_comment": "First row right 1"
   },
   "haunter_idle2":
@@ -13,8 +11,6 @@
     "frame": {"x":402,"y":0,"w":68,"h":50},
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-    "sourceSize": {"w":128,"h":128},
     "_comment": "First row right 2"
   },
   "haunter_idle3":
@@ -22,8 +18,6 @@
     "frame": {"x":335,"y":0,"w":65,"h":45},
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-    "sourceSize": {"w":128,"h":128},
     "_comment": "First row right 3"
   },
   "haunter_forward1":
@@ -31,8 +25,6 @@
     "frame": {"x":470,"y":50,"w":65,"h":50},
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-    "sourceSize": {"w":128,"h":128},
     "_comment": "Second row right 1"
   },
   "haunter_forward2":
@@ -40,8 +32,6 @@
     "frame": {"x":405,"y":50,"w":65,"h":50},
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-    "sourceSize": {"w":128,"h":128},
     "_comment": "Second row right 2"
   },
   "haunter_forward3":
@@ -49,9 +39,134 @@
     "frame": {"x":340,"y":50,"w":65,"h":50},
     "rotated": false,
     "trimmed": false,
-    "spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
-    "sourceSize": {"w":128,"h":128},
     "_comment": "Second row right 3"
+  },
+  "haunter_damage":
+  {
+    "frame": {"x":480,"y":100,"w":55,"h":50},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Third row right 1"
+  },
+  "haunter_down1":
+  {
+    "frame": {"x":485,"y":142,"w":50,"h":57},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Fourth row right 1"
+  },
+  "haunter_down2":
+  {
+    "frame": {"x":425,"y":142,"w":60,"h":57},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Fourth row right 2"
+  },
+  "haunter_down3":
+  {
+    "frame": {"x":364,"y":142,"w":60,"h":57},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Fourth row right 3"
+  },
+  "haunter_down4":
+  {
+    "frame": {"x":295,"y":142,"w":65,"h":57},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Fourth row right 4"
+  },
+  "haunter_punch1":
+  {
+    "frame": {"x":470,"y":203,"w":65,"h":42},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Fifth row right 1"
+  },
+  "haunter_punch2":
+  {
+    "frame": {"x":417,"y":203,"w":55,"h":42},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Fifth row right 2"
+  },
+  "haunter_punch3":
+  {
+    "frame": {"x":368,"y":203,"w":50,"h":42},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Fifth row right 3"
+  },
+  "haunter_punch4":
+  {
+    "frame": {"x":308,"y":203,"w":60,"h":42},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Fifth row right 4"
+  },
+  "haunter_punch5":
+  {
+    "frame": {"x":238,"y":203,"w":70,"h":42},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Fifth row right 5"
+  },
+  "haunter_punch6":
+  {
+    "frame": {"x":153,"y":203,"w":85,"h":42},
+    "rotated": false,
+    "trimmed": false,
+
+    "_comment": "Fifth row right 6"
+  },
+  "haunter_lick1":
+  {
+    "frame": {"x":488,"y":248,"w":45,"h":62},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Sixth row right 1"
+  },
+  "haunter_lick2":
+  {
+    "frame": {"x":425,"y":248,"w":60,"h":62},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Sixth row right 2"
+  },
+  "haunter_lick3":
+  {
+    "frame": {"x":345,"y":248,"w":80,"h":62},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Sixth row right 3"
+  },
+  "haunter_lick4":
+  {
+    "frame": {"x":265,"y":248,"w":80,"h":62},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Sixth row right 4"
+  },
+  "haunter_lick5":
+  {
+    "frame": {"x":192,"y":248,"w":70,"h":62},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Sixth row right 5"
+  },
+  "haunter_lick6":
+  {
+    "frame": {"x":125,"y":248,"w":65,"h":62},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Sixth row right 6"
+  },
+  "haunter_lick7":
+  {
+    "frame": {"x":60,"y":248,"w":65,"h":62},
+    "rotated": false,
+    "trimmed": false,
+    "_comment": "Sixth row right 7"
   }},
   "meta": {
     "source": "https://www.spriters-resource.com/custom_edited/pokemongeneration1customs/sheet/26798/",
@@ -60,7 +175,6 @@
     "format": "RGBA8888",
     "colour": "199, 225, 209, 255",
     "size": {"w":537,"h":310},
-    "scale": "1",
-    "smartupdate": "$TexturePacker:SmartUpdate:e024fc465eb10905077cc6c0fb2a59cf:1f7959a1eb4c24cc1e49ddb6702f6c99:9e52acbb65607b5336e40f8226573675$"
+    "scale": "1"
   }
 }
