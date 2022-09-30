@@ -76,13 +76,13 @@ class Haunter(model.pokemon.Pokemon):
                 self.animation = False
 
         keys = pygame.key.get_pressed()
-        if keys[pygame.K_LEFT]:
+        if keys[pygame.K_LEFT] or keys[pygame.K_a]:
             self.rect.move_ip(-5, 0)
-        elif keys[pygame.K_RIGHT]:
+        elif keys[pygame.K_RIGHT] or keys[pygame.K_d]:
             self.rect.move_ip(5, 0)
-        elif keys[pygame.K_UP]:
+        elif keys[pygame.K_UP] or keys[pygame.K_w]:
             self.speed -= self.acceleration
-        elif keys[pygame.K_DOWN]:
+        elif keys[pygame.K_DOWN] or keys[pygame.K_s]:
             self.speed += self.acceleration
         else:
             self.speed *= 0.99
