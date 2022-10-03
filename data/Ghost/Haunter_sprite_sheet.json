@@ -4,7 +4,7 @@
     "frame": {"x":470,"y":0,"w":65,"h":45},
     "rotated": false,
     "trimmed": false,
-    "_comment": "First row right - Idle 1"
+    "_comment": "First row right - Idle 3"
   },
   "1":
   {
@@ -18,21 +18,21 @@
     "frame": {"x":470,"y":0,"w":65,"h":45},
     "rotated": false,
     "trimmed": false,
-    "_comment": "First row right - Idle 1 repeated"
+    "_comment": "First row right - Idle 3 repeated"
   },
   "3":
   {
     "frame": {"x":335,"y":0,"w":65,"h":45},
     "rotated": false,
     "trimmed": false,
-    "_comment": "First row right - Idle 3"
+    "_comment": "First row right - Idle 1"
   },
   "4":
   {
     "frame": {"x":470,"y":50,"w":65,"h":50},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Second row right - Forward 1"
+    "_comment": "Second row right - Forward 3"
   },
   "5":
   {
@@ -46,7 +46,7 @@
     "frame": {"x":340,"y":50,"w":65,"h":50},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Second row right - Forward 3"
+    "_comment": "Second row right - Forward 1"
   },
   "7":
   {
@@ -60,63 +60,63 @@
     "frame": {"x":485,"y":142,"w":50,"h":57},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Fourth row right - Down 1"
+    "_comment": "Fourth row right - Down 4"
   },
   "9":
   {
     "frame": {"x":425,"y":142,"w":60,"h":57},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Fourth row right - Down 2"
+    "_comment": "Fourth row right - Down 3"
   },
   "10":
   {
     "frame": {"x":364,"y":142,"w":60,"h":57},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Fourth row right - Down 3"
+    "_comment": "Fourth row right - Down 2"
   },
   "11":
   {
     "frame": {"x":295,"y":142,"w":65,"h":57},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Fourth row right - Down 4"
+    "_comment": "Fourth row right - Down 1"
   },
   "12":
   {
     "frame": {"x":470,"y":203,"w":65,"h":42},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Fifth row right - Punch 1"
+    "_comment": "Fifth row right - Punch 6"
   },
   "13":
   {
     "frame": {"x":417,"y":203,"w":55,"h":42},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Fifth row right - Punch 2"
+    "_comment": "Fifth row right - Punch 5"
   },
   "14":
   {
     "frame": {"x":368,"y":203,"w":50,"h":42},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Fifth row right - Punch 3"
+    "_comment": "Fifth row right - Punch 4"
   },
   "15":
   {
     "frame": {"x":308,"y":203,"w":60,"h":42},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Fifth row right - Punch 4"
+    "_comment": "Fifth row right - Punch 3"
   },
   "16":
   {
     "frame": {"x":238,"y":203,"w":70,"h":42},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Fifth row right - Punch 5"
+    "_comment": "Fifth row right - Punch 2"
   },
   "17":
   {
@@ -124,28 +124,28 @@
     "rotated": false,
     "trimmed": false,
 
-    "_comment": "Fifth row right - Punch 6"
+    "_comment": "Fifth row right - Punch 1"
   },
   "18":
   {
     "frame": {"x":488,"y":248,"w":45,"h":62},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Sixth row right - Lick 1"
+    "_comment": "Sixth row right - Lick 7"
   },
   "19":
   {
     "frame": {"x":425,"y":248,"w":60,"h":62},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Sixth row right - Lick 2"
+    "_comment": "Sixth row right - Lick 6"
   },
   "20":
   {
     "frame": {"x":345,"y":248,"w":80,"h":62},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Sixth row right - Lick 3"
+    "_comment": "Sixth row right - Lick 5"
   },
   "21":
   {
@@ -159,21 +159,21 @@
     "frame": {"x":192,"y":248,"w":70,"h":62},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Sixth row right - Lick 5"
+    "_comment": "Sixth row right - Lick 3"
   },
   "23":
   {
     "frame": {"x":125,"y":248,"w":65,"h":62},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Sixth row right - Lick 6"
+    "_comment": "Sixth row right - Lick 2"
   },
   "24":
   {
     "frame": {"x":60,"y":248,"w":65,"h":62},
     "rotated": false,
     "trimmed": false,
-    "_comment": "Sixth row right - Lick 7"
+    "_comment": "Sixth row right - Lick 1"
   }},
   "meta": {
     "source": "https://www.spriters-resource.com/custom_edited/pokemongeneration1customs/sheet/26798/",
@@ -182,6 +182,7 @@
     "format": "RGBA8888",
     "colour": "199, 225, 209, 255",
     "size": {"w":537,"h":310},
+    "reversed": true,
     "scale": "1"
   }
 }
