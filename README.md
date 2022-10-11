@@ -1,2 +1,2 @@
 # pokemon-pygame
-Making a simple pokémon game 2D with pygame just for testing
+A pokémon game where the pokémon evades the pokéballs coming at it.
